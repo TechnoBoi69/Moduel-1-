@@ -1,0 +1,66 @@
+tasks = []  # To-Do List
+
+def add_tasks():
+    """Add a task to the list."""
+    new_task = input("Enter a task: ").strip()
+    if new_task:
+        tasks.append(new_task)
+        print("Task added successfully!")
+    else:
+        print("Task cannot be empty.")
+
+def view_tasks():
+    """View the list of tasks."""
+    if len(tasks) == 0:
+        print("There are no tasks to view.")
+    else:
+        print('List of tasks:')
+        for i, task in enumerate(tasks):
+            print(f'{i + 1}. {task}')
+
+def delete_tasks():
+    """Delete a task from the list by its number."""
+    if len(tasks) == 0:
+        print('No tasks to delete.')
+    else:
+        print('List of tasks:')
+        for i, task in enumerate(tasks):
+            print(f'{i + 1}. {task}')
+        try:
+            choice = int(input('Enter the task number to delete: '))
+            if 0 < choice <= len(tasks):
+                removed = tasks.pop(choice - 1)
+                print(f"Task '{removed}' deleted successfully.")
+            else:
+                print('Invalid task number.')
+        except ValueError:
+            print("Please enter a valid number.")
+
+def main():
+    """Main function to run the to-do list app."""
+    while True:
+        print("\n=== To-Do List Menu ===")
+        print("1. Add task")
+        print("2. View tasks")
+        print("3. Delete task")
+        print("4. Quit application")
+
+        try:
+            choice = int(input("Select an option (1-4): "))
+            if choice == 1:
+                add_tasks()
+            elif choice == 2:
+                view_tasks()
+            elif choice == 3:
+                delete_tasks()
+            elif choice == 4:
+                print("Have a great day. Goodbye!")
+                break
+            else:
+                print("Error: Invalid choice. Please select a valid menu option (1-4).")
+        except ValueError:
+            print("Error: Please enter a number.")
+
+if __name__ == "__main__":
+    main()
+

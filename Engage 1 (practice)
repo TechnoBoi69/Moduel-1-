@@ -1,0 +1,180 @@
+
+
+my_string = 'Im learning a lot about coding and the use of python!'
+message = "I'm learning a lot about the terms of using python. I'm estatic to learn more!"
+print(message.upper())
+print(message.lower())
+print(message.replace("estatic", "thrilled"))
+
+my_string = "Hello"
+repeated_string = my_string * 3
+print(repeated_string)
+
+language = "pyhton"
+print(language[0:3])
+print(language[3:])
+print(language[-1])
+
+text = "pyhton"
+print(text.strip())
+my_string = "Pyhton is fun"
+print(my_string.split())
+print("".join(my_string))
+
+filename = "report.pfd"
+print(filename.endswith(".pfd"))
+
+name = "Bicho"
+age = 3
+print("Hi, my name is {} and I am {} years old.".format (name, age))
+print(f"My name is {name} and I am {age} years old.")
+
+#Build a text-based name generator that combines random first and last names using string manipulation
+
+first_names = ["Veronica", "Ofelia", "Alberto", "Abrahm", "Leo", "Bicho"]
+last_names = ["Tellez", "Herrera", "Perez", "Vazques", "Dior"]
+
+import random
+
+f_names = random.choice(first_names)
+l_names = random.choice(last_names)
+print(f'{f_names} {l_names}')
+
+#Engage & Apply: Calculate the total cost of the following items. Then, apply a 10% discoutn and display the final amount.
+#steps: 1. Add the cost of the three items, 2. Subtract the discount (10% of the total) from the total
+
+water = 15
+eggs = 3
+banana = 1
+chicken = 5
+discount = (10)
+print(water+ eggs + banana + chicken)
+
+#power operator(**)
+print(2**4)
+
+#pow(): Another way to calculate powers (similar to **)
+print(pow(2, 3))
+
+#COMMON INTEGER FUNCTION
+#abs(): Returns the absolute value of an integer
+print(abs(-10))
+
+#round(): Round a number (if float is invloved)
+print(round(3.14))
+print(round(4.58))
+
+#TYPE CONVERSOION (Casting)
+#Converting strings to integers: Often in real-world scenarios, you'll get numbers as strings.
+num_str = "123"
+num=int(num_str)
+print(num + 20)
+
+#COMMON INTEGER PITFALL AND TIPS
+#1. MODULUS WITH NEGATIVE NUMBERS: The results of the modulus operator (%) can be surprising with negative numbers
+#- Tip: Remeber that a % b always has the same sign as b.
+print(-7%3)
+
+#IMPLICIT TYPE CONVERSION (COERCION): When mixing integers and floats in operations, Python automatically converts the integer to a float.
+print(3 + 2.0)
+
+#Final Challange: Design a simple calculator that performs operation on two integers provided by the user.
+#Steps:
+#1. Ask the user to input two numbers.
+#2. Perform basic arithmetic operations(add, subtract, multiply, divide) on the inputs.
+#3. Display the reaults.
+
+first_num = int(input('What is the first number?'))
+second_num = int(input('What is the second number'))
+
+add = (first_num + second_num)
+subtract = (first_num - second_num)
+multiply = (first_num * second_num)
+divide = (first_num / second_num)
+divide_floor = (first_num // second_num)
+
+print(add)
+print(subtract)
+print(multiply)
+print(divide)
+print(divide_floor)
+
+#Lesson:5 
+#Conditional Logic in Python
+#What are conditional Statements? Condtional Statements allow programs to make decisions based on certain condition.
+# KEY CONCEPTS:  
+# - In python, conditional statements are controlled by: 
+# - if: Used to test if a condition is true.
+# - elif: (short for "else if") checks for multiple conditions. You can have as many elif's in your conditional statements.
+
+# Syntax of Python Conditional Statement
+# - Key Concepts:
+# 1. Python uses indentation to define the scope of conditional statements. 
+# 2. The condition is evaluated as TRUE or FALSE.
+# Example:
+x = 10
+if x>0:
+    print("x is positive")
+elif x == 0:
+    print("x is zero")
+else:
+    print("x is a negative")
+
+age = 17
+is_student = True
+
+if age >= 18 and is_student:
+    print("eligible for student discount")
+else:
+    print("not eligible for student discount")
+
+
+# 1. Ask the user for the weather (sunny or raining) and their mood (happy or tired)
+# 2. Based on the inputs, print one of the following suggestions:
+# "Go for a hike"
+# "Relax indoors"
+
+# Nested Conditional Statements: Conditional statement placed inside another if, elif, or else block, allowing for more complex decision-making based on multiple conditions.
+# example:
+num = 15
+if num > 0:
+    if num % 2 == 0:
+        print("The number is positive and even")
+    elif num == 0:
+        print("The number is positive and odd")
+    else:
+        print("The number is not positive")
+    
+
+# Final Challenge: Write a program where the user has to guess a secret number between 1 and 10. The program should provide feedback if the guess is too high or too low and congratulate the user if they guess correctly.
+# Hint: Remember that RANDOM module we used a few lessons ago? It would be extremely helpful here...
+# Steps:
+# 1. Randomly select a secret number between 1-10.
+# 2. Ask the user to make a guess between 1-10.
+# 3. If theuser is correct, print "congradulations, You guessed the secret number!"
+# 4. if the user is too low, print "Too Low!"
+# 5. If the user is too high, print "Too High!"
+
+import random
+
+secret_num = random.randint(1,10)
+guess = int(input('Make a guess between 1-10:'))
+
+if(secret_num == guess):
+    print('Congradulations, You guessed the secret number!')
+elif(guess < secret_num):
+    print('Too Low!')
+else:
+    print('Too High!')
+
+weather = input("what is the weather like? (sunny/raining)")
+mood = input("how are you feeling? (happy/tired)")
+
+if weather == "sunny" and mood == "happy":
+    print("go for a hike")
+elif weather == "sunny" and mood == "tired":
+    print('stay indoors')
+elif weather == "raining" and mood == "happy":
+    print("stay indoors")
+else:
+    print("stay indoors")

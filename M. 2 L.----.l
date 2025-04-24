@@ -1,0 +1,1 @@
+hobbies = ['music', 'gaming', 'hanging out']
